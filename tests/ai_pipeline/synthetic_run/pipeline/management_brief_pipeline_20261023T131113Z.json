@@ -1,0 +1,18 @@
+{
+  "pipeline_version": "management_brief_pipeline_v0.2",
+  "timestamp_utc": "2026-10-23T13:11:13.000425+00:00",
+  "data_classification": "SYNTHETIC",
+  "cloud_context_boundary": "PASS",
+  "structured_output_status": "PASS",
+  "deterministic_validation_status": "PASS",
+  "pipeline_status": "PASS",
+  "model_deployment": "gpt-5-mini",
+  "prompt_version": "management_brief_system_v0.2",
+  "schema_version": "management_brief_schema_v0.2",
+  "contract_version": "0.2",
+  "input_tokens": 3285,
+  "output_tokens": 3587,
+  "total_tokens": 6872,
+  "duration_seconds": 33.168,
+  "human_review_required": true
+}

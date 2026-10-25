@@ -1,0 +1,219 @@
+{
+  "contract_version": "0.2",
+  "reporting_period": "2026-08",
+  "report_status": "AI_DRAFT_REQUIRES_HUMAN_REVIEW",
+  "executive_summary": {
+    "statement": "For reporting period 2026-08 overall activity increased versus July 2026: order count is 120 and units sold are 128. Data quality is ACCEPTABLE with geographic mapping coverage 99.2% and one order line missing a usable quantity. Top products by units are Urban Bike A (24), City Bike B (17) and Folding Bike C (13). Nordrhein-Westfalen, Bayern and Baden-Württemberg are the largest mapped regions.",
+    "evidence_refs": [
+      "EV_OVERALL_001",
+      "EV_PERIOD_001",
+      "EV_DATA_QUALITY_001",
+      "EV_DQ_001",
+      "EV_PRODUCT_001",
+      "EV_PRODUCT_002",
+      "EV_PRODUCT_003",
+      "EV_REGION_001",
+      "EV_REGION_002",
+      "EV_REGION_003"
+    ]
+  },
+  "key_insights": [
+    {
+      "insight_id": "INSIGHT_001",
+      "category": "OVERALL_PERFORMANCE",
+      "statement": "Order count is 120 and units sold are 128 for 2026-08 as reported in the analytics context.",
+      "confidence": "HIGH",
+      "evidence_refs": [
+        "EV_OVERALL_001"
+      ]
+    },
+    {
+      "insight_id": "INSIGHT_002",
+      "category": "OVERALL_PERFORMANCE",
+      "statement": "Compared with 2026-07, order count increased from 110 to 120 (order_change_pct 9.1) and units sold increased from 116 to 128 (units_change_pct 10.3).",
+      "confidence": "HIGH",
+      "evidence_refs": [
+        "EV_PERIOD_001"
+      ]
+    },
+    {
+      "insight_id": "INSIGHT_003",
+      "category": "PRODUCT",
+      "statement": "Urban Bike A (PRODUCT_A) is the top-selling SKU with 24 units sold (product_rank_by_units 1) and a reported period_change_pct of 33.3 versus the previous period.",
+      "confidence": "HIGH",
+      "evidence_refs": [
+        "EV_PRODUCT_001"
+      ]
+    },
+    {
+      "insight_id": "INSIGHT_004",
+      "category": "PRODUCT",
+      "statement": "Folding Bike C (PRODUCT_C) recorded 13 units sold with a reported period_change_pct of 62.5 versus the previous period and ranks third by units.",
+      "confidence": "MEDIUM",
+      "evidence_refs": [
+        "EV_PRODUCT_003"
+      ]
+    },
+    {
+      "insight_id": "INSIGHT_005",
+      "category": "PRODUCT",
+      "statement": "City Bike B (PRODUCT_B) sold 17 units (rank 2) and shows a reported period_change_pct of -10.5 versus the previous period.",
+      "confidence": "MEDIUM",
+      "evidence_refs": [
+        "EV_PRODUCT_002"
+      ]
+    },
+    {
+      "insight_id": "INSIGHT_006",
+      "category": "REGION",
+      "statement": "Nordrhein-Westfalen is the largest mapped region with 28 orders, 30 units sold and mapped_order_share_pct 23.5; Bayern and Baden-Württemberg follow with 19/20 and 17/18 respectively.",
+      "confidence": "HIGH",
+      "evidence_refs": [
+        "EV_REGION_001",
+        "EV_REGION_002",
+        "EV_REGION_003"
+      ]
+    },
+    {
+      "insight_id": "INSIGHT_007",
+      "category": "DATA_QUALITY",
+      "statement": "Geographic mapping coverage is 99.2% and overall data quality status is ACCEPTABLE, while one order line lacks a usable quantity which may affect product-level unit totals.",
+      "confidence": "HIGH",
+      "evidence_refs": [
+        "EV_DATA_QUALITY_001",
+        "EV_DQ_001"
+      ]
+    },
+    {
+      "insight_id": "INSIGHT_008",
+      "category": "METRIC_AVAILABILITY",
+      "statement": "Several commercial metrics required for profitability and advertising assessment are unsupported in this dataset.",
+      "confidence": "HIGH",
+      "evidence_refs": [
+        "EV_METRIC_AVAILABILITY_001"
+      ]
+    }
+  ],
+  "items_requiring_attention": [
+    {
+      "attention_id": "ATTENTION_001",
+      "statement": "One order line has no usable quantity value and could bias product-level units and percent-change calculations, particularly for low-volume SKUs.",
+      "confidence": "HIGH",
+      "evidence_refs": [
+        "EV_DQ_001"
+      ]
+    },
+    {
+      "attention_id": "ATTENTION_002",
+      "statement": "Unsupported commercial metrics (profit, contribution_margin, advertising_ROI, ACOS, inventory_risk, return_rate) limit the ability to assess profitability or advertising effectiveness from this context.",
+      "confidence": "HIGH",
+      "evidence_refs": [
+        "EV_METRIC_AVAILABILITY_001"
+      ]
+    },
+    {
+      "attention_id": "ATTENTION_003",
+      "statement": "City Bike B's reported month-over-month decline (period_change_pct -10.5) may merit review despite overall period growth.",
+      "confidence": "MEDIUM",
+      "evidence_refs": [
+        "EV_PRODUCT_002",
+        "EV_PERIOD_001"
+      ]
+    }
+  ],
+  "recommended_actions": [
+    {
+      "action_id": "ACTION_001",
+      "action": "Investigate the order line with missing quantity to reconcile the correct quantity or flag the record in source systems.",
+      "action_type": "INVESTIGATE",
+      "evidence_refs": [
+        "EV_DQ_001"
+      ]
+    },
+    {
+      "action_id": "ACTION_002",
+      "action": "Verify product-level counts for high-impact SKUs (PRODUCT_A, PRODUCT_B, PRODUCT_C) to ensure reported changes are not data artifacts.",
+      "action_type": "VERIFY",
+      "evidence_refs": [
+        "EV_PRODUCT_001",
+        "EV_PRODUCT_002",
+        "EV_PRODUCT_003",
+        "EV_DQ_001"
+      ]
+    },
+    {
+      "action_id": "ACTION_003",
+      "action": "Review regional operations or demand drivers in Nordrhein-Westfalen, Bayern and Baden-Württemberg to understand mapped order concentration.",
+      "action_type": "REVIEW",
+      "evidence_refs": [
+        "EV_REGION_001",
+        "EV_REGION_002",
+        "EV_REGION_003"
+      ]
+    },
+    {
+      "action_id": "ACTION_004",
+      "action": "Request or integrate the unsupported commercial metrics before making profitability or marketing budget decisions.",
+      "action_type": "COMPARE",
+      "evidence_refs": [
+        "EV_METRIC_AVAILABILITY_001"
+      ]
+    },
+    {
+      "action_id": "ACTION_005",
+      "action": "Monitor month-over-month trends for PRODUCT_C and PRODUCT_B in subsequent reporting periods to confirm persistence prior to operational changes.",
+      "action_type": "MONITOR",
+      "evidence_refs": [
+        "EV_PRODUCT_002",
+        "EV_PRODUCT_003"
+      ]
+    }
+  ],
+  "caveats": [
+    {
+      "caveat_id": "CAVEAT_001",
+      "statement": "This brief uses only the supplied deterministic analytics; the LLM did not recalculate KPIs or infer missing metrics per AI usage policy.",
+      "evidence_refs": [
+        "EV_METRIC_AVAILABILITY_001"
+      ]
+    },
+    {
+      "caveat_id": "CAVEAT_002",
+      "statement": "One missing-quantity order line (EV_DQ_001) may affect product-level unit totals and percent-change figures, especially for low-volume SKUs.",
+      "evidence_refs": [
+        "EV_DQ_001"
+      ]
+    },
+    {
+      "caveat_id": "CAVEAT_003",
+      "statement": "Geographic mapping figures reflect mapped orders only; geography coverage is 99.2% as reported in EV_DATA_QUALITY_001.",
+      "evidence_refs": [
+        "EV_DATA_QUALITY_001"
+      ]
+    },
+    {
+      "caveat_id": "CAVEAT_004",
+      "statement": "Metrics listed as unsupported in EV_METRIC_AVAILABILITY_001 are not available and were not estimated.",
+      "evidence_refs": [
+        "EV_METRIC_AVAILABILITY_001"
+      ]
+    }
+  ],
+  "used_evidence_refs": [
+    "EV_DATA_QUALITY_001",
+    "EV_DQ_001",
+    "EV_OVERALL_001",
+    "EV_PERIOD_001",
+    "EV_PRODUCT_001",
+    "EV_PRODUCT_002",
+    "EV_PRODUCT_003",
+    "EV_REGION_001",
+    "EV_REGION_002",
+    "EV_REGION_003",
+    "EV_METRIC_AVAILABILITY_001"
+  ],
+  "human_review": {
+    "required": true,
+    "status": "PENDING"
+  }
+}

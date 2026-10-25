@@ -1,0 +1,19 @@
+{
+  "validator_version": "0.1",
+  "contract_version": "0.2",
+  "reporting_period": "2026-08",
+  "validation_status": "FAIL",
+  "issue_count": 2,
+  "issues": [
+    {
+      "code": "UNUSED_EVIDENCE_REF_DECLARED",
+      "path": "used_evidence_refs",
+      "message": "EV_REGION_002 is declared as used but is not referenced by any report item."
+    },
+    {
+      "code": "UNUSED_EVIDENCE_REF_DECLARED",
+      "path": "used_evidence_refs",
+      "message": "EV_REGION_003 is declared as used but is not referenced by any report item."
+    }
+  ]
+}

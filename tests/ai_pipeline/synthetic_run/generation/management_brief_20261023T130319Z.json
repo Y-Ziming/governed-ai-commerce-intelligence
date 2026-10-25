@@ -1,0 +1,184 @@
+{
+  "contract_version": "0.2",
+  "reporting_period": "2026-08",
+  "report_status": "AI_DRAFT_REQUIRES_HUMAN_REVIEW",
+  "executive_summary": {
+    "statement": "Orders and units increased versus the prior period: 120 orders and 128 units in 2026-08, representing a 9.1% increase in order count and a 10.3% increase in units sold versus 2026-07.",
+    "evidence_refs": [
+      "EV_OVERALL_001",
+      "EV_PERIOD_001"
+    ]
+  },
+  "key_insights": [
+    {
+      "insight_id": "INSIGHT_001",
+      "category": "OVERALL_PERFORMANCE",
+      "statement": "Total order count is 120 and total units sold is 128 for the period.",
+      "confidence": "HIGH",
+      "evidence_refs": [
+        "EV_OVERALL_001"
+      ]
+    },
+    {
+      "insight_id": "INSIGHT_002",
+      "category": "OVERALL_PERFORMANCE",
+      "statement": "Order count increased 9.1% and units sold increased 10.3% compared with the previous period (2026-07).",
+      "confidence": "HIGH",
+      "evidence_refs": [
+        "EV_PERIOD_001"
+      ]
+    },
+    {
+      "insight_id": "INSIGHT_003",
+      "category": "PRODUCT",
+      "statement": "Urban Bike A is the top-selling product with 24 units sold and is ranked #1 by units; its sales rose 33.3% versus the previous period.",
+      "confidence": "HIGH",
+      "evidence_refs": [
+        "EV_PRODUCT_001"
+      ]
+    },
+    {
+      "insight_id": "INSIGHT_004",
+      "category": "PRODUCT",
+      "statement": "City Bike B sold 17 units (rank #2) and declined by 10.5% versus the previous period.",
+      "confidence": "HIGH",
+      "evidence_refs": [
+        "EV_PRODUCT_002"
+      ]
+    },
+    {
+      "insight_id": "INSIGHT_005",
+      "category": "PRODUCT",
+      "statement": "Folding Bike C sold 13 units (rank #3) and increased 62.5% versus the previous period.",
+      "confidence": "HIGH",
+      "evidence_refs": [
+        "EV_PRODUCT_003"
+      ]
+    },
+    {
+      "insight_id": "INSIGHT_006",
+      "category": "REGION",
+      "statement": "Nordrhein-Westfalen is the largest mapped region by orders with 28 orders, 30 units sold and a mapped order share of 23.5%.",
+      "confidence": "HIGH",
+      "evidence_refs": [
+        "EV_REGION_001"
+      ]
+    },
+    {
+      "insight_id": "INSIGHT_007",
+      "category": "DATA_QUALITY",
+      "statement": "Geographic mapping coverage is 99.2% and overall data quality status is marked ACCEPTABLE; one order line has no usable quantity value.",
+      "confidence": "HIGH",
+      "evidence_refs": [
+        "EV_DATA_QUALITY_001",
+        "EV_DQ_001",
+        "EV_DQ_002"
+      ]
+    },
+    {
+      "insight_id": "INSIGHT_008",
+      "category": "METRIC_AVAILABILITY",
+      "statement": "Several commercial metrics are unavailable for this analysis, including profit, contribution_margin, advertising_ROI, ACOS, inventory_risk and return_rate.",
+      "confidence": "HIGH",
+      "evidence_refs": [
+        "EV_METRIC_AVAILABILITY_001"
+      ]
+    }
+  ],
+  "items_requiring_attention": [
+    {
+      "attention_id": "ATTENTION_001",
+      "statement": "One order line has a missing quantity value which may affect product-level and aggregate unit reporting.",
+      "confidence": "HIGH",
+      "evidence_refs": [
+        "EV_DQ_001"
+      ]
+    },
+    {
+      "attention_id": "ATTENTION_002",
+      "statement": "Unavailable commercial metrics (profit, contribution_margin, advertising_ROI, ACOS, inventory_risk, return_rate) limit margin and promotional effectiveness analysis.",
+      "confidence": "MEDIUM",
+      "evidence_refs": [
+        "EV_METRIC_AVAILABILITY_001"
+      ]
+    }
+  ],
+  "recommended_actions": [
+    {
+      "action_id": "ACTION_001",
+      "action": "Investigate the order line with a missing quantity to determine cause and correct the source data if possible.",
+      "action_type": "INVESTIGATE",
+      "evidence_refs": [
+        "EV_DQ_001",
+        "EV_DATA_QUALITY_001"
+      ]
+    },
+    {
+      "action_id": "ACTION_002",
+      "action": "Review top product movements (Urban Bike A, City Bike B, Folding Bike C) to confirm whether operational, promotional or availability factors should be investigated.",
+      "action_type": "REVIEW",
+      "evidence_refs": [
+        "EV_PRODUCT_001",
+        "EV_PRODUCT_002",
+        "EV_PRODUCT_003"
+      ]
+    },
+    {
+      "action_id": "ACTION_003",
+      "action": "Monitor shipment coverage and trusted shipments to ensure fulfillment signals remain aligned with order trends.",
+      "action_type": "MONITOR",
+      "evidence_refs": [
+        "EV_OVERALL_001"
+      ]
+    },
+    {
+      "action_id": "ACTION_004",
+      "action": "Review the impact of unavailable metrics on decision making and identify which external data or calculations are needed to restore those analyses.",
+      "action_type": "REVIEW",
+      "evidence_refs": [
+        "EV_METRIC_AVAILABILITY_001"
+      ]
+    }
+  ],
+  "caveats": [
+    {
+      "caveat_id": "CAVEAT_001",
+      "statement": "One order line is missing a usable quantity value; this is recorded as a known data-quality limitation.",
+      "evidence_refs": [
+        "EV_DQ_001"
+      ]
+    },
+    {
+      "caveat_id": "CAVEAT_002",
+      "statement": "Geographic mapping coverage is 99.2%; a small fraction of geography may be unmapped.",
+      "evidence_refs": [
+        "EV_DQ_002"
+      ]
+    },
+    {
+      "caveat_id": "CAVEAT_003",
+      "statement": "Profit, contribution margin, advertising ROI, ACOS, inventory risk and return rate are not available in this dataset and cannot be used in this report.",
+      "evidence_refs": [
+        "EV_METRIC_AVAILABILITY_001"
+      ]
+    }
+  ],
+  "used_evidence_refs": [
+    "EV_OVERALL_001",
+    "EV_PERIOD_001",
+    "EV_PRODUCT_001",
+    "EV_PRODUCT_002",
+    "EV_PRODUCT_003",
+    "EV_REGION_001",
+    "EV_REGION_002",
+    "EV_REGION_003",
+    "EV_DATA_QUALITY_001",
+    "EV_DQ_001",
+    "EV_DQ_002",
+    "EV_METRIC_AVAILABILITY_001"
+  ],
+  "human_review": {
+    "required": true,
+    "status": "PENDING"
+  }
+}

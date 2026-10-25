@@ -1,0 +1,3 @@
+﻿timestamp_utc,operation_type,model_deployment,prompt_version,contract_version,data_classification,input_tokens,output_tokens,total_tokens,duration_seconds,response_id,generation_status
+2026-10-23T12:45:33.453020+00:00,MANAGEMENT_BRIEF_GENERATION,gpt-5-mini,management_brief_system_v0.2,0.2,SYNTHETIC,2596,3010,5606,30.568,resp_07fdfdfe7f79125c006adb56f5b32c819085458598588e850b,SUCCESS
+2026-10-23T12:55:19.655439+00:00,MANAGEMENT_BRIEF_GENERATION,gpt-5-mini,management_brief_system_v0.2,0.2,SYNTHETIC,3285,3266,6551,29.692,resp_081230f9ad519c65006adb593c2fc48196867847b77d94f26c,SUCCESS

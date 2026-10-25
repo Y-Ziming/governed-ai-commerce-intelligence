@@ -1,0 +1,190 @@
+{
+  "contract_version": "0.2",
+  "reporting_period": "2026-08",
+  "report_status": "AI_DRAFT_REQUIRES_HUMAN_REVIEW",
+  "executive_summary": {
+    "statement": "Orders increased to 120 and units sold were 128 in the reporting period; both orders and units rose versus the previous period. Data quality is marked ACCEPTABLE with one order line missing a usable quantity and geographic mapping coverage near complete.",
+    "evidence_refs": [
+      "EV_OVERALL_001",
+      "EV_PERIOD_001",
+      "EV_DATA_QUALITY_001",
+      "EV_DQ_001",
+      "EV_DQ_002"
+    ]
+  },
+  "key_insights": [
+    {
+      "insight_id": "INSIGHT_001",
+      "category": "OVERALL_PERFORMANCE",
+      "statement": "Order count is 120; units sold are 128; 26 unique products were sold; 118 trusted shipment orders with shipment coverage 98.3%.",
+      "confidence": "HIGH",
+      "evidence_refs": [
+        "EV_OVERALL_001"
+      ]
+    },
+    {
+      "insight_id": "INSIGHT_002",
+      "category": "OVERALL_PERFORMANCE",
+      "statement": "Order count increased by 9.1% and units sold increased by 10.3% compared with the previous period (2026-07).",
+      "confidence": "HIGH",
+      "evidence_refs": [
+        "EV_PERIOD_001"
+      ]
+    },
+    {
+      "insight_id": "INSIGHT_003",
+      "category": "PRODUCT",
+      "statement": "Urban Bike A sold 24 units, is ranked #1 by units, and recorded a period change of 33.3%.",
+      "confidence": "HIGH",
+      "evidence_refs": [
+        "EV_PRODUCT_001"
+      ]
+    },
+    {
+      "insight_id": "INSIGHT_004",
+      "category": "PRODUCT",
+      "statement": "City Bike B sold 17 units and showed a period change of -10.5%.",
+      "confidence": "HIGH",
+      "evidence_refs": [
+        "EV_PRODUCT_002"
+      ]
+    },
+    {
+      "insight_id": "INSIGHT_005",
+      "category": "PRODUCT",
+      "statement": "Folding Bike C sold 13 units and recorded a period change of 62.5%.",
+      "confidence": "HIGH",
+      "evidence_refs": [
+        "EV_PRODUCT_003"
+      ]
+    },
+    {
+      "insight_id": "INSIGHT_006",
+      "category": "REGION",
+      "statement": "Nordrhein-Westfalen is the largest mapped region with 28 orders, 30 units and mapped order share 23.5%.",
+      "confidence": "HIGH",
+      "evidence_refs": [
+        "EV_REGION_001"
+      ]
+    },
+    {
+      "insight_id": "INSIGHT_007",
+      "category": "REGION",
+      "statement": "Bayern recorded 19 orders and 20 units (mapped order share 16.0%).",
+      "confidence": "HIGH",
+      "evidence_refs": [
+        "EV_REGION_002"
+      ]
+    },
+    {
+      "insight_id": "INSIGHT_008",
+      "category": "REGION",
+      "statement": "Baden-Württemberg recorded 17 orders and 18 units (mapped order share 14.3%).",
+      "confidence": "HIGH",
+      "evidence_refs": [
+        "EV_REGION_003"
+      ]
+    }
+  ],
+  "items_requiring_attention": [
+    {
+      "attention_id": "ATTENTION_001",
+      "statement": "One order line has no usable quantity value and may affect product- or order-level analysis.",
+      "confidence": "HIGH",
+      "evidence_refs": [
+        "EV_DQ_001",
+        "EV_DATA_QUALITY_001"
+      ]
+    },
+    {
+      "attention_id": "ATTENTION_002",
+      "statement": "Some commonly used commercial metrics are unavailable in this dataset (profit, contribution_margin, advertising_ROI, ACOS, inventory_risk, return_rate).",
+      "confidence": "HIGH",
+      "evidence_refs": [
+        "EV_METRIC_AVAILABILITY_001"
+      ]
+    },
+    {
+      "attention_id": "ATTENTION_003",
+      "statement": "Geographic mapping coverage is 99.2%, leaving a small portion unmapped that could affect fine-grained regional analysis.",
+      "confidence": "HIGH",
+      "evidence_refs": [
+        "EV_DATA_QUALITY_001",
+        "EV_DQ_002"
+      ]
+    }
+  ],
+  "recommended_actions": [
+    {
+      "action_id": "ACTION_001",
+      "action": "Investigate the order line with missing quantity to determine root cause and correct the source data or flag affected records.",
+      "action_type": "INVESTIGATE",
+      "evidence_refs": [
+        "EV_DQ_001",
+        "EV_DATA_QUALITY_001"
+      ]
+    },
+    {
+      "action_id": "ACTION_002",
+      "action": "Review factors potentially contributing to the decline in City Bike B (17 units, -10.5%) versus the prior period.",
+      "action_type": "REVIEW",
+      "evidence_refs": [
+        "EV_PRODUCT_002"
+      ]
+    },
+    {
+      "action_id": "ACTION_003",
+      "action": "Monitor the strong growth of Folding Bike C (13 units, 62.5%) to assess whether increased demand is sustained or requires operational support.",
+      "action_type": "MONITOR",
+      "evidence_refs": [
+        "EV_PRODUCT_003"
+      ]
+    },
+    {
+      "action_id": "ACTION_004",
+      "action": "Compare performance across the top mapped regions (Nordrhein-Westfalen, Bayern, Baden-Württemberg) to identify regional opportunities or supply priorities.",
+      "action_type": "COMPARE",
+      "evidence_refs": [
+        "EV_REGION_001",
+        "EV_REGION_002",
+        "EV_REGION_003"
+      ]
+    }
+  ],
+  "caveats": [
+    {
+      "caveat_id": "CAVEAT_001",
+      "statement": "Profitability, contribution margin, advertising ROI, ACOS, inventory risk and return rate are not available for this analysis.",
+      "evidence_refs": [
+        "EV_METRIC_AVAILABILITY_001"
+      ]
+    },
+    {
+      "caveat_id": "CAVEAT_002",
+      "statement": "One order line with missing quantity and the ~0.8% of unmapped geography may limit the accuracy of some product- or region-level conclusions.",
+      "evidence_refs": [
+        "EV_DQ_001",
+        "EV_DATA_QUALITY_001",
+        "EV_DQ_002"
+      ]
+    }
+  ],
+  "used_evidence_refs": [
+    "EV_OVERALL_001",
+    "EV_PERIOD_001",
+    "EV_PRODUCT_001",
+    "EV_PRODUCT_002",
+    "EV_PRODUCT_003",
+    "EV_REGION_001",
+    "EV_REGION_002",
+    "EV_REGION_003",
+    "EV_DATA_QUALITY_001",
+    "EV_DQ_001",
+    "EV_DQ_002",
+    "EV_METRIC_AVAILABILITY_001"
+  ],
+  "human_review": {
+    "required": true,
+    "status": "PENDING"
+  }
+}

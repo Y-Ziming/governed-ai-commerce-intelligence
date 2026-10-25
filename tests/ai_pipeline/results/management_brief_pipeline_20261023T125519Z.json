@@ -1,0 +1,19 @@
+{
+  "pipeline_version": "management_brief_pipeline_v0.1",
+  "timestamp_utc": "2026-10-23T12:55:19.655439+00:00",
+  "model_deployment": "gpt-5-mini",
+  "prompt_version": "management_brief_system_v0.2",
+  "schema_version": "management_brief_schema_v0.2",
+  "contract_version": "0.2",
+  "data_classification": "SYNTHETIC",
+  "structured_output_status": "PASS",
+  "deterministic_validation_status": "PASS",
+  "pipeline_status": "PASS",
+  "input_tokens": 3285,
+  "output_tokens": 3266,
+  "total_tokens": 6551,
+  "duration_seconds": 29.692,
+  "generation_file": "tests\\ai_generation\\results\\management_brief_structured_20261023T125519Z.json",
+  "validation_report_file": "tests\\ai_validation\\results\\management_brief_validation_20261023T125519Z.json",
+  "human_review_required": true
+}

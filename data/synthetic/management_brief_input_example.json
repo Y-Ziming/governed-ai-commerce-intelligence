@@ -1,0 +1,106 @@
+{
+  "contract_version": "0.1",
+  "reporting_period": "2026-08",
+  "currency": "EUR",
+
+  "data_quality": {
+    "geography_coverage_pct": 99.2,
+    "missing_quantity_rows": 1,
+    "quality_status": "ACCEPTABLE"
+  },
+
+  "overall_performance": {
+    "order_count": 120,
+    "units_sold": 128,
+    "unique_products": 26,
+    "trusted_shipment_orders": 118,
+    "shipment_coverage_pct": 98.3
+  },
+
+  "period_comparison": {
+    "previous_period": "2026-07",
+    "previous_order_count": 110,
+    "order_change_pct": 9.1,
+    "previous_units_sold": 116,
+    "units_change_pct": 10.3
+  },
+
+  "product_performance": [
+    {
+      "evidence_id": "EV_PRODUCT_001",
+      "product_id": "PRODUCT_A",
+      "product_name": "Urban Bike A",
+      "units_sold": 24,
+      "order_count": 22,
+      "product_rank_by_units": 1,
+      "previous_period_units": 18,
+      "period_change_pct": 33.3
+    },
+    {
+      "evidence_id": "EV_PRODUCT_002",
+      "product_id": "PRODUCT_B",
+      "product_name": "City Bike B",
+      "units_sold": 17,
+      "order_count": 16,
+      "product_rank_by_units": 2,
+      "previous_period_units": 19,
+      "period_change_pct": -10.5
+    },
+    {
+      "evidence_id": "EV_PRODUCT_003",
+      "product_id": "PRODUCT_C",
+      "product_name": "Folding Bike C",
+      "units_sold": 13,
+      "order_count": 13,
+      "product_rank_by_units": 3,
+      "previous_period_units": 8,
+      "period_change_pct": 62.5
+    }
+  ],
+
+  "regional_performance": [
+    {
+      "evidence_id": "EV_REGION_001",
+      "bundesland": "Nordrhein-Westfalen",
+      "order_count": 28,
+      "units_sold": 30,
+      "mapped_order_share_pct": 23.5
+    },
+    {
+      "evidence_id": "EV_REGION_002",
+      "bundesland": "Bayern",
+      "order_count": 19,
+      "units_sold": 20,
+      "mapped_order_share_pct": 16.0
+    },
+    {
+      "evidence_id": "EV_REGION_003",
+      "bundesland": "Baden-Württemberg",
+      "order_count": 17,
+      "units_sold": 18,
+      "mapped_order_share_pct": 14.3
+    }
+  ],
+
+  "known_limitations": [
+    {
+      "evidence_id": "EV_DQ_001",
+      "type": "MISSING_QUANTITY",
+      "description": "One order line has no usable quantity value."
+    },
+    {
+      "evidence_id": "EV_DQ_002",
+      "type": "GEOGRAPHY_COVERAGE",
+      "description": "Geographic mapping coverage is 99.2%."
+    }
+  ],
+
+  "unsupported_metrics": [
+    "profit",
+    "contribution_margin",
+    "advertising_ROI",
+    "ACOS",
+    "inventory_risk",
+    "return_rate"
+  ]
+}

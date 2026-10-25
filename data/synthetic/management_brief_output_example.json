@@ -1,0 +1,106 @@
+{
+  "contract_version": "0.1",
+
+  "reporting_period": "2026-08",
+
+  "report_status": "AI_DRAFT_REQUIRES_HUMAN_REVIEW",
+
+  "executive_summary": "Order volume and units sold increased compared with the previous period. Sales were led by Urban Bike A, while Folding Bike C showed the strongest percentage increase among the highlighted products. Nordrhein-Westfalen represented the largest share of mapped orders.",
+
+  "key_insights": [
+    {
+      "insight_id": "INSIGHT_001",
+      "category": "OVERALL_PERFORMANCE",
+      "statement": "Orders increased by 9.1% and units sold increased by 10.3% compared with the previous period.",
+      "confidence": "HIGH",
+      "evidence_refs": [
+        "OVERALL_PERFORMANCE"
+      ]
+    },
+
+    {
+      "insight_id": "INSIGHT_002",
+      "category": "PRODUCT",
+      "statement": "Urban Bike A was the highest-volume product with 24 units sold.",
+      "confidence": "HIGH",
+      "evidence_refs": [
+        "EV_PRODUCT_001"
+      ]
+    },
+
+    {
+      "insight_id": "INSIGHT_003",
+      "category": "PRODUCT",
+      "statement": "Folding Bike C increased by 62.5% compared with the previous period, the strongest increase among the highlighted products.",
+      "confidence": "HIGH",
+      "evidence_refs": [
+        "EV_PRODUCT_003"
+      ]
+    },
+
+    {
+      "insight_id": "INSIGHT_004",
+      "category": "REGION",
+      "statement": "Nordrhein-Westfalen accounted for 23.5% of mapped orders, the largest share among the highlighted regions.",
+      "confidence": "HIGH",
+      "evidence_refs": [
+        "EV_REGION_001"
+      ]
+    }
+  ],
+
+  "items_requiring_attention": [
+    {
+      "attention_id": "ATTENTION_001",
+      "statement": "City Bike B declined by 10.5% compared with the previous period and may warrant further investigation.",
+      "confidence": "HIGH",
+      "evidence_refs": [
+        "EV_PRODUCT_002"
+      ]
+    }
+  ],
+
+  "recommended_actions": [
+    {
+      "action_id": "ACTION_001",
+      "action": "Review stock availability and recent operational conditions for Urban Bike A and Folding Bike C before deciding whether inventory changes are required.",
+      "action_type": "INVESTIGATE",
+      "evidence_refs": [
+        "EV_PRODUCT_001",
+        "EV_PRODUCT_003"
+      ]
+    },
+
+    {
+      "action_id": "ACTION_002",
+      "action": "Investigate possible operational, promotional or seasonal factors behind the decline in City Bike B.",
+      "action_type": "INVESTIGATE",
+      "evidence_refs": [
+        "EV_PRODUCT_002"
+      ]
+    }
+  ],
+
+  "caveats": [
+    {
+      "caveat_id": "CAVEAT_001",
+      "statement": "Profitability cannot currently be assessed because trusted profitability metrics are not available.",
+      "evidence_refs": []
+    },
+
+    {
+      "caveat_id": "CAVEAT_002",
+      "statement": "Geographic mapping coverage is 99.2%, so a small portion of orders is not represented in Bundesland-level analysis.",
+      "evidence_refs": [
+        "EV_DQ_002"
+      ]
+    }
+  ],
+
+  "human_review": {
+    "required": true,
+    "status": "PENDING",
+    "reviewer": null,
+    "review_timestamp": null
+  }
+}

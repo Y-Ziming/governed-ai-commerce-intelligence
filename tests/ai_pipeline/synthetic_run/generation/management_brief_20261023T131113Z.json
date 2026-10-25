@@ -1,0 +1,177 @@
+{
+  "contract_version": "0.2",
+  "reporting_period": "2026-08",
+  "report_status": "AI_DRAFT_REQUIRES_HUMAN_REVIEW",
+  "executive_summary": {
+    "statement": "Orders were 120 and units sold were 128 in 2026-08; order count increased 9.1% and units sold increased 10.3% versus 2026-07.",
+    "evidence_refs": [
+      "EV_OVERALL_001",
+      "EV_PERIOD_001"
+    ]
+  },
+  "key_insights": [
+    {
+      "insight_id": "INSIGHT_001",
+      "category": "OVERALL_PERFORMANCE",
+      "statement": "Order count for the period is 120 and units sold is 128; the period-over-period changes are +9.1% (orders) and +10.3% (units).",
+      "confidence": "HIGH",
+      "evidence_refs": [
+        "EV_OVERALL_001",
+        "EV_PERIOD_001"
+      ]
+    },
+    {
+      "insight_id": "INSIGHT_002",
+      "category": "PRODUCT",
+      "statement": "Urban Bike A sold 24 units (product_rank_by_units 1) and increased 33.3% versus the previous period.",
+      "confidence": "HIGH",
+      "evidence_refs": [
+        "EV_PRODUCT_001"
+      ]
+    },
+    {
+      "insight_id": "INSIGHT_003",
+      "category": "PRODUCT",
+      "statement": "City Bike B sold 17 units and declined 10.5% versus the previous period.",
+      "confidence": "HIGH",
+      "evidence_refs": [
+        "EV_PRODUCT_002"
+      ]
+    },
+    {
+      "insight_id": "INSIGHT_004",
+      "category": "PRODUCT",
+      "statement": "Folding Bike C sold 13 units and increased 62.5% versus the previous period.",
+      "confidence": "HIGH",
+      "evidence_refs": [
+        "EV_PRODUCT_003"
+      ]
+    },
+    {
+      "insight_id": "INSIGHT_005",
+      "category": "REGION",
+      "statement": "Nordrhein-Westfalen recorded 28 orders, 30 units sold, and a mapped order share of 23.5%.",
+      "confidence": "HIGH",
+      "evidence_refs": [
+        "EV_REGION_001"
+      ]
+    },
+    {
+      "insight_id": "INSIGHT_006",
+      "category": "DATA_QUALITY",
+      "statement": "Geographic mapping coverage is 99.2% and there is one order line with a missing quantity; overall data quality status is ACCEPTABLE.",
+      "confidence": "HIGH",
+      "evidence_refs": [
+        "EV_DATA_QUALITY_001",
+        "EV_DQ_001",
+        "EV_DQ_002"
+      ]
+    }
+  ],
+  "items_requiring_attention": [
+    {
+      "attention_id": "ATTENTION_001",
+      "statement": "One order line has no usable quantity value and may require correction or confirmation.",
+      "confidence": "HIGH",
+      "evidence_refs": [
+        "EV_DQ_001"
+      ]
+    },
+    {
+      "attention_id": "ATTENTION_002",
+      "statement": "Key commercial metrics (profit, contribution_margin, advertising_ROI, ACOS, inventory_risk, return_rate) are not available in this dataset.",
+      "confidence": "HIGH",
+      "evidence_refs": [
+        "EV_METRIC_AVAILABILITY_001"
+      ]
+    }
+  ],
+  "recommended_actions": [
+    {
+      "action_id": "ACTION_001",
+      "action": "Investigate the order line with missing quantity to confirm unit counts and correct the source data if needed.",
+      "action_type": "INVESTIGATE",
+      "evidence_refs": [
+        "EV_DQ_001",
+        "EV_DATA_QUALITY_001"
+      ]
+    },
+    {
+      "action_id": "ACTION_002",
+      "action": "Review City Bike B performance (units down 10.5%) to identify possible operational, promotional, availability or other factors for follow-up.",
+      "action_type": "REVIEW",
+      "evidence_refs": [
+        "EV_PRODUCT_002"
+      ]
+    },
+    {
+      "action_id": "ACTION_003",
+      "action": "Monitor Urban Bike A and Folding Bike C trends to assess whether recent increases are sustained over subsequent periods.",
+      "action_type": "MONITOR",
+      "evidence_refs": [
+        "EV_PRODUCT_001",
+        "EV_PRODUCT_003"
+      ]
+    },
+    {
+      "action_id": "ACTION_004",
+      "action": "Verify availability of financial and advertising metrics before making margin, ROI or inventory risk decisions.",
+      "action_type": "VERIFY",
+      "evidence_refs": [
+        "EV_METRIC_AVAILABILITY_001"
+      ]
+    },
+    {
+      "action_id": "ACTION_005",
+      "action": "Compare regional order shares across the listed regions periodically to track geographic concentration.",
+      "action_type": "COMPARE",
+      "evidence_refs": [
+        "EV_REGION_001",
+        "EV_REGION_002",
+        "EV_REGION_003"
+      ]
+    }
+  ],
+  "caveats": [
+    {
+      "caveat_id": "CAVEAT_001",
+      "statement": "The dataset does not include profit, contribution_margin, advertising_ROI, ACOS, inventory_risk or return_rate; these metrics are unsupported.",
+      "evidence_refs": [
+        "EV_METRIC_AVAILABILITY_001"
+      ]
+    },
+    {
+      "caveat_id": "CAVEAT_002",
+      "statement": "One order line has no usable quantity value which may limit product-level accuracy until resolved.",
+      "evidence_refs": [
+        "EV_DQ_001"
+      ]
+    },
+    {
+      "caveat_id": "CAVEAT_003",
+      "statement": "Geographic mapping coverage is 99.2%, so regional mapping is not fully complete.",
+      "evidence_refs": [
+        "EV_DQ_002",
+        "EV_DATA_QUALITY_001"
+      ]
+    }
+  ],
+  "used_evidence_refs": [
+    "EV_DATA_QUALITY_001",
+    "EV_DQ_001",
+    "EV_DQ_002",
+    "EV_METRIC_AVAILABILITY_001",
+    "EV_OVERALL_001",
+    "EV_PERIOD_001",
+    "EV_PRODUCT_001",
+    "EV_PRODUCT_002",
+    "EV_PRODUCT_003",
+    "EV_REGION_001",
+    "EV_REGION_002",
+    "EV_REGION_003"
+  ],
+  "human_review": {
+    "required": true,
+    "status": "PENDING"
+  }
+}
