@@ -12,35 +12,8 @@ Real company data remains private. This public repository contains only syntheti
 
 ## Architecture at a Glance
 
-```text
-Operational commerce data
-        ↓
-Data profiling & quality controls
-        ↓
-Canonical data model
-        ↓
-Deterministic analytics
-        ↓
-Management dashboard
-        ↓
-Trusted AI context
-        ↓
-Cloud boundary validation
-        ↓
-Microsoft Foundry / GPT-5-mini
-        ↓
-Structured Outputs
-        ↓
-Deterministic governance validation
-        ↓
-Human review
-        ↓
-Azure Blob output
-```
+<img width="1536" height="1024" alt="Target architecture" src="https://github.com/user-attachments/assets/6f08f36b-b196-41e0-b1e9-eb4cfa952c31" />
 
-![Target architecture](screenshots/01_target_architecture.png)
-
----
 
 ## Business Problem
 
