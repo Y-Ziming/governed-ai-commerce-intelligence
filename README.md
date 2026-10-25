@@ -1,145 +1,121 @@
 # Governed AI Commerce Intelligence
 
-An end-to-end Data & AI transformation case study that converts a fragmented manual e-commerce reporting workflow into a governed analytics and AI decision-support platform.
+**An end-to-end Data & AI transformation case study built around a real small-business e-commerce workflow in Germany.**
 
-The project was developed around a real small-business use case in Germany. Real company data remains private. This public repository contains only synthetic or anonymized examples.
+The project transforms a fragmented, spreadsheet-heavy reporting process into a governed analytics and AI decision-support platform using Python, Microsoft Foundry and Azure.
 
-## Business Context
+> **Core design principle:** trusted data → deterministic metrics → governed AI reasoning → validation → human review.
 
-The original workflow relied heavily on manually downloaded marketplace order data and spreadsheet-based reporting.
+Real company data remains private. This public repository contains only synthetic or anonymized examples.
 
-The business needed clearer answers to questions such as:
+---
+
+## Architecture at a Glance
+
+```text
+Operational commerce data
+        ↓
+Data profiling & quality controls
+        ↓
+Canonical data model
+        ↓
+Deterministic analytics
+        ↓
+Management dashboard
+        ↓
+Trusted AI context
+        ↓
+Cloud boundary validation
+        ↓
+Microsoft Foundry / GPT-5-mini
+        ↓
+Structured Outputs
+        ↓
+Deterministic governance validation
+        ↓
+Human review
+        ↓
+Azure Blob output
+```
+
+![Target architecture](screenshots/01_target_architecture.png)
+
+---
+
+## Business Problem
+
+The original workflow relied heavily on manually downloaded marketplace data and spreadsheet-based reporting.
+
+Management needed clearer answers to questions such as:
 
 * Which products are selling best?
 * Which regions generate the strongest demand?
 * How is performance changing month over month?
 * Which data-quality issues could affect decisions?
-* How can AI support management interpretation without becoming the source of truth for business KPIs?
+* Where can AI add value without becoming the source of truth for business metrics?
 
-The goal was not to add an LLM on top of raw spreadsheets.
+The project therefore started with business discovery and workflow analysis rather than with an LLM.
 
-The goal was to redesign the workflow from the data layer upward.
+---
 
-## Transformation Approach
+## What I Built
 
-The project evolved through five layers:
+### 1. Data Foundation
 
-1. Business discovery and data profiling
-2. Canonical data modelling and data-quality controls
-3. Deterministic analytics and management dashboard
-4. Governed AI decision support with Microsoft Foundry
-5. Secure Azure deployment with identity-based access and observability
-
-The resulting architecture deliberately separates deterministic business metrics from probabilistic AI reasoning.
-
-> The LLM never owns the source of truth for business KPIs.
-
-## Implemented Solution
-
-### Data Foundation
-
-Raw operational spreadsheets are transformed into trusted canonical entities for:
-
-* orders
-* order lines
-* products
-* shipments
-* quarantined data-quality events
+Operational spreadsheets are transformed into trusted canonical entities for orders, order lines, products, shipments and quarantined data-quality events.
 
 Important identifiers are handled as strings to avoid numeric precision loss.
 
 Direct customer PII is excluded from the analytics and AI layers.
 
-### Deterministic Analytics
+### 2. Deterministic Analytics
 
-Trusted analytics are calculated before any AI interaction.
+Business KPIs are calculated before the model is invoked.
 
 Implemented analytical views include:
 
-* monthly sales overview
+* monthly sales performance
 * product performance
 * month-over-month comparison
 * regional performance
 * shipment coverage
-* geography mapping coverage
+* geographic mapping coverage
 * data-quality indicators
 
-A local Streamlit dashboard was developed for management exploration of product and regional performance.
+A Streamlit management dashboard was developed for product and regional analysis.
 
-### Governed AI Management Brief
+### 3. Governed AI Management Brief
 
-Microsoft Foundry and GPT-5-mini are used to interpret trusted analytical context and generate a structured management brief.
+Microsoft Foundry and GPT-5-mini interpret trusted aggregated metrics and generate a structured management brief.
 
-The AI is allowed to:
+The LLM may summarize, interpret and recommend investigation.
 
-* summarize observed performance
-* prioritize issues for review
-* identify supported patterns
-* recommend further investigation
+It does **not** own or recalculate official business KPIs.
 
-The AI is not allowed to:
+### 4. AI Governance
 
-* recalculate official KPIs
-* invent unavailable metrics
-* infer unsupported causal relationships
-* expose direct PII
-* make autonomous commercial decisions
+The AI layer uses defense-in-depth controls:
 
-All AI outputs require human review.
+* Pydantic-based Structured Outputs
+* evidence references
+* deterministic validation
+* Microsoft Foundry Groundedness and Relevance evaluation
+* custom evidence-sufficiency evaluation
+* governance regression testing
+* human-in-the-loop review
+* cloud-context boundary validation
 
-## Defense-in-Depth AI Governance
+A key project finding was:
 
-The project uses multiple independent controls.
+> **Evidence validity, evidence sufficiency and semantic grounding are different controls.**
 
-### Structured Outputs
+![Microsoft Foundry evaluation](screenshots/02_foundry_evaluation.png)
 
-A Pydantic schema is supplied through the Microsoft Foundry Responses API.
+### 5. Azure Deployment
 
-This constrains:
+The governed AI pipeline was containerized and deployed as an Azure Container Apps Job.
 
-* required fields
-* allowed categories
-* confidence values
-* recommendation types
-* report status
-* human-review status
-
-### Deterministic Validation
-
-A Python governance validator checks:
-
-* contract version consistency
-* required output structure
-* valid evidence references
-* allowed categories and action types
-* human-review requirements
-* evidence-reference consistency
-
-Invalid outputs are blocked.
-
-### Semantic Evaluation
-
-Microsoft Foundry evaluations were used for:
-
-* Groundedness
-* Relevance
-
-A custom evaluator was also created for:
-
-* evidence sufficiency
-* unsupported associations
-
-A small governance regression suite demonstrated that built-in semantic evaluation and domain-specific governance controls detect different classes of failure.
-
-This produced an important design conclusion:
-
-> Evidence validity, evidence sufficiency, and semantic grounding are different controls.
-
-## Azure Deployment
-
-The governed AI pipeline has been containerized and deployed as an Azure Container Apps Job.
-
-The deployed flow is:
+The deployed private-data flow is:
 
 ```text
 Private aggregated analytics context
@@ -150,33 +126,68 @@ Azure Container Apps Job
         ↓
 Managed Identity
         ↓
-Microsoft Foundry / GPT-5-mini
+Microsoft Foundry
         ↓
 Structured Output
         ↓
-Deterministic Governance Validation
+Governance Validation
         ↓
 Azure Blob Storage
 ```
 
-The cloud deployment has been successfully executed with real aggregated business context.
+No API keys or ACR passwords are embedded in the application.
+
+![Azure governed pipeline](screenshots/03_azure_job_pipeline_pass.png)
+
+The cloud pipeline has been successfully executed using real aggregated business context while keeping raw operational data and direct PII outside the public repository.
+
+![Azure output artifacts](screenshots/04_blob_output_artifacts.png)
+
+---
 
 ## Security and Privacy
 
-The project follows a deliberately small but practical security baseline:
+The portfolio uses a deliberately small but practical security baseline:
 
-* no real company data in the public repository
-* no direct customer PII sent to the AI layer
-* cloud-context boundary validation before model invocation
-* no API keys embedded in application code
-* no ACR passwords embedded in deployment configuration
-* Microsoft Entra ID and Managed Identity for Azure service access
-* RBAC scoped to required resources
-* anonymous Blob access disabled
-* private business outputs stored outside the public repository
-* human review required before AI output is treated as decision support
+* real company data never enters the public GitHub repository
+* direct customer PII is excluded from the AI context
+* private data is checked before being sent to Foundry
+* anonymous Blob access is disabled
+* Microsoft Entra ID and Managed Identity are used instead of embedded credentials
+* RBAC is scoped to required Azure resources
+* private AI outputs remain outside the public repository
+* AI output requires human review
 
-For the current portfolio scope, advanced network isolation such as Private Endpoints and VNet integration is documented as future enterprise hardening rather than implemented infrastructure.
+Advanced private networking is documented as future enterprise hardening rather than implemented for this small portfolio workload.
+
+---
+
+## Evaluation and Governance Results
+
+The project uses three distinct validation layers:
+
+```text
+Structured Outputs
+→ Is the response structurally valid?
+
+Deterministic Validator
+→ Does it satisfy explicit governance rules?
+
+Semantic Evaluators
+→ Is the statement actually supported by the cited evidence?
+```
+
+A custom governance regression suite included:
+
+```text
+Compliant response                  → PASS
+Incomplete evidence coverage        → FAIL
+Unsupported evidence association    → FAIL
+```
+
+All three expected outcomes were correctly classified.
+
+---
 
 ## Observability and Cost Governance
 
@@ -191,33 +202,30 @@ Each programmatic AI generation records:
 * execution duration
 * generation status
 
-Azure Log Analytics captures Container Apps Job execution logs.
+Container Apps execution logs are captured in Azure Log Analytics.
 
-Azure Cost Management is treated as the financial source of truth, and a monthly Azure budget alert is configured for the project.
+Azure Cost Management is treated as the financial source of truth, and a monthly project budget alert is configured.
+
+---
 
 ## Key Architecture Decisions
 
-Several technologies were deliberately not added merely to increase architectural complexity.
+**No RAG**
+The current problem uses structured, precomputed analytical context rather than an external knowledge corpus.
 
-### No RAG
+**No Agent**
+The AI provides decision support but does not autonomously execute business actions.
 
-The current use case operates on structured, precomputed analytical context. Retrieval over an external knowledge corpus is not required.
+**No Azure SQL**
+The current workload does not justify another persistent database layer.
 
-### No Agent
+**No LLM-based KPI calculation**
+Business metrics remain deterministic.
 
-The system generates decision support but does not autonomously execute business actions.
+**Human review stays mandatory**
+AI output remains decision support rather than an autonomous business decision.
 
-### No Azure SQL
-
-The current analytical workload does not justify an additional transactional or serving database.
-
-### No LLM-Based KPI Calculation
-
-Business metrics are deterministic and calculated before the model is invoked.
-
-### Human-in-the-Loop by Design
-
-AI output remains a draft requiring human review.
+---
 
 ## Repository Structure
 
@@ -229,17 +237,17 @@ data/
     synthetic public examples only
 
 docs/
-    AI contract, evaluation, governance and experiment documentation
+    AI contracts, governance, evaluation and experiment documentation
 
 prompts/
-    versioned management-brief system prompts
+    versioned system prompts
 
 src/ai/
-    context validation, structured-output schema,
-    Foundry generation and governance pipeline
+    schemas, Foundry integration, boundary controls,
+    validation and governed pipeline code
 
 tests/
-    synthetic validation and evaluation evidence
+    synthetic validation, evaluation and pipeline evidence
 
 screenshots/
     sanitized portfolio evidence
@@ -249,21 +257,21 @@ requirements.txt
 README.md
 ```
 
-## Project Status
+---
 
-Implemented:
+## Implemented
 
 * business workflow analysis
+* data profiling and quality controls
 * canonical data model
-* data-quality controls
 * deterministic analytics
-* regional analytics
+* regional analysis
 * management dashboard
 * AI context boundary
 * Microsoft Foundry integration
-* structured AI outputs
-* deterministic governance validation
-* built-in semantic evaluation
+* Structured Outputs
+* deterministic AI validation
+* semantic evaluation
 * custom governance evaluation
 * governance regression testing
 * token observability
@@ -276,18 +284,18 @@ Implemented:
 * Azure budget control
 * private aggregated cloud execution
 
-Future / enterprise hardening:
+## Future Enterprise Hardening
 
-* private endpoints
-* VNet-based network isolation
+* Private Endpoints
+* VNet-based isolation
 * automated CI/CD
 * infrastructure as code
 * expanded production evaluation datasets
 
-## Core Design Principle
+---
 
-The project treats AI as a governed reasoning layer on top of trusted deterministic analytics, not as a replacement for the data foundation.
+## Core Takeaway
 
-The architecture therefore follows:
+This project treats AI as a governed reasoning layer on top of trusted deterministic analytics — not as a replacement for the data foundation.
 
-**Trusted data → deterministic metrics → governed AI reasoning → validation → human review.**
+**Trusted data → deterministic metrics → governed AI → validation → human review.**
