@@ -82,7 +82,8 @@ A key project finding was:
 
 > **Evidence validity, evidence sufficiency and semantic grounding are different controls.**
 
-![Microsoft Foundry evaluation](screenshots/02_foundry_evaluation.png)
+<img width="1168" height="404" alt="02_foundry_evaluations_overview" src="https://github.com/user-attachments/assets/61b74d4a-821d-4c07-adaa-d1be2d92aca6" />
+
 
 ### 5. Azure Deployment
 
@@ -110,11 +111,12 @@ Azure Blob Storage
 
 No API keys or ACR passwords are embedded in the application.
 
-![Azure governed pipeline](screenshots/03_azure_job_pipeline_pass.png)
+<img width="948" height="588" alt="04_azure_pipeline_log_analytics" src="https://github.com/user-attachments/assets/e269a08b-01ce-4d89-b7e9-89e39a8913ab" />
+
 
 The cloud pipeline has been successfully executed using real aggregated business context while keeping raw operational data and direct PII outside the public repository.
 
-![Azure output artifacts](screenshots/04_blob_output_artifacts.png)
+<img width="984" height="447" alt="05_blob_ai_output_overview" src="https://github.com/user-attachments/assets/bc2ff7a0-ad49-4fba-95f5-685cbc885fd5" />
 
 ---
 
